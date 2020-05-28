@@ -1,7 +1,11 @@
-export default class ErrorRepository extends Map {
+export default class ErrorRepository {
+  constructor() {
+    this.collection = new Map();
+  }
+
   translate(code) {
-    if (this.has(code)) {
-      return this.get(code);
+    if (this.collection.has(code)) {
+      return this.collection.get(code);
     }
     return 'Unknown error';
   }

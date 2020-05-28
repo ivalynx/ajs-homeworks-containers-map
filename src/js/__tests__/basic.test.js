@@ -2,7 +2,7 @@ import ErrorRepository from '../ErrorRepository';
 
 test('Если код ошибки error1 существует, то можно получить человекочитаемый текст ошибки', () => {
   const errorBase = new ErrorRepository();
-  errorBase.set('error1', 'Добавить можно только объект класса Character');
+  errorBase.collection.set('error1', 'Добавить можно только объект класса Character');
   const result = errorBase.translate('error1');
   expect(result).toBe('Добавить можно только объект класса Character');
 });
